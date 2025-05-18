@@ -1,0 +1,192 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model bookings {
+  id_user      String    @db.VarChar(50)
+  id_slot      String    @db.VarChar(50)
+  no_antrian   Int
+  status       String    @db.VarChar(50)
+  start_consul DateTime? @db.Time(6)
+  end_consul   DateTime? @db.Time(6)
+  gejala       String?
+  durasi       Int?
+  create_at    DateTime? @default(now()) @db.Timestamp(6)
+  update_at    DateTime? @default(now()) @db.Timestamp(6)
+  slot         slot      @relation(fields: [id_slot], references: [id_slot], onDelete: NoAction, onUpdate: NoAction)
+  users        users     @relation(fields: [id_user], references: [id_user], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([id_user, id_slot])
+}
+
+model detail_sp {
+  lisensi     String      @db.VarChar(100)
+  id_sp       String      @db.VarChar(50)
+  specialists specialists @relation(fields: [id_sp], references: [id_sp], onDelete: Cascade, onUpdate: NoAction)
+  doctors     doctors     @relation(fields: [lisensi], references: [lisensi], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([lisensi, id_sp])
+}
+
+model doctors {
+  lisensi      String        @id @db.VarChar(100)
+  nama_dokter  String        @db.VarChar(255)
+  email        String        @unique @db.VarChar(255)
+  sandi_dokter String        @db.VarChar(255)
+  gender       gender_enum
+  tgl_lahir    DateTime      @db.Date
+  status       status_doctor
+  foto         Bytes?
+  create_at    DateTime?     @default(now()) @db.Timestamp(6)
+  update_at    DateTime?     @default(now()) @db.Timestamp(6)
+  detail_sp    detail_sp[]
+  practices    practices[]
+}
+
+model hospitals {
+  id_rs       String      @id @db.VarChar(50)
+  sandi_admin String      @db.VarChar(255)
+  nama_rs     String      @db.VarChar(255)
+  tipe        tipe_enum
+  status      status_rs
+  foto        Bytes?
+  alamat      String      @db.VarChar(255)
+  kode_pos    String      @db.VarChar(25)
+  latitude    Decimal     @db.Decimal(9, 6)
+  longitude   Decimal     @db.Decimal(9, 6)
+  create_at   DateTime?   @default(now()) @db.Timestamp(6)
+  update_at   DateTime?   @default(now()) @db.Timestamp(6)
+  id_kota     Int?
+  id_prov     Int?
+  cities      cities?     @relation(fields: [id_kota], references: [id_kota], onUpdate: NoAction)
+  provinces   provinces?  @relation(fields: [id_prov], references: [id_prov], onUpdate: NoAction)
+  practices   practices[]
+}
+
+model ml_booking {
+  id           String     @id @db.VarChar(255)
+  id_rs        String?    @db.VarChar(50)
+  lisensi      String?    @db.VarChar(100)
+  id_sp        String?    @db.VarChar(50)
+  hari         hari_enum?
+  gejala       String?
+  start_consul DateTime?  @db.Time(6)
+  end_consul   DateTime?  @db.Time(6)
+  duration     Int?
+}
+
+model practices {
+  id_prak     String      @id @db.VarChar(50)
+  id_rs       String      @db.VarChar(50)
+  id_sp       String      @db.VarChar(50)
+  lisensi     String      @db.VarChar(100)
+  id_sched    String      @db.VarChar(50)
+  hospitals   hospitals   @relation(fields: [id_rs], references: [id_rs], onDelete: NoAction, onUpdate: NoAction)
+  schedules   schedules   @relation(fields: [id_sched], references: [id_sched], onDelete: NoAction, onUpdate: NoAction)
+  specialists specialists @relation(fields: [id_sp], references: [id_sp], onDelete: NoAction, onUpdate: NoAction)
+  doctors     doctors     @relation(fields: [lisensi], references: [lisensi], onDelete: NoAction, onUpdate: NoAction)
+  slot        slot[]
+}
+
+model schedules {
+  id_sched      String      @id @db.VarChar(50)
+  hari          hari_enum
+  start_session String      @db.VarChar(5)
+  end_session   String      @db.VarChar(5)
+  create_at     DateTime?   @default(now()) @db.Timestamp(6)
+  update_at     DateTime?   @default(now()) @db.Timestamp(6)
+  practices     practices[]
+}
+
+model slot {
+  id_slot   String     @id @db.VarChar(50)
+  tanggal   DateTime?  @default(dbgenerated("CURRENT_DATE")) @db.Date
+  total     Int?
+  sisa      Int?
+  create_at DateTime?  @default(now()) @db.Timestamp(6)
+  update_at DateTime?  @default(now()) @db.Timestamp(6)
+  id_prak   String?    @db.VarChar(50)
+  bookings  bookings[]
+  practices practices? @relation(fields: [id_prak], references: [id_prak], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model specialists {
+  id_sp     String      @id @db.VarChar(50)
+  spesialis String      @unique @db.VarChar(255)
+  create_at DateTime?   @default(now()) @db.Timestamp(6)
+  update_at DateTime?   @default(now()) @db.Timestamp(6)
+  detail_sp detail_sp[]
+  practices practices[]
+}
+
+model users {
+  id_user   String      @id @db.VarChar(50)
+  email     String      @unique @db.VarChar(255)
+  nama      String      @db.VarChar(255)
+  sandi     String      @db.VarChar(255)
+  id_bpjs   String?     @db.VarChar(50)
+  nik       String?     @db.VarChar(50)
+  gender    gender_enum
+  tgl_lahir DateTime?   @db.Date
+  foto      Bytes?
+  role      String?     @default("User") @db.VarChar(50)
+  create_at DateTime?   @default(now()) @db.Timestamp(6)
+  update_at DateTime?   @default(now()) @db.Timestamp(6)
+  bookings  bookings[]
+}
+
+model cities {
+  id_kota   Int         @id @default(autoincrement())
+  nama_kota String      @db.VarChar(100)
+  id_prov   Int
+  provinces provinces   @relation(fields: [id_prov], references: [id_prov], onDelete: Cascade, onUpdate: NoAction)
+  hospitals hospitals[]
+}
+
+model provinces {
+  id_prov   Int         @id @default(autoincrement())
+  nama_prov String      @unique @db.VarChar(100)
+  cities    cities[]
+  hospitals hospitals[]
+}
+
+enum gender_enum {
+  Laki_laki @map("Laki-laki")
+  Perempuan
+}
+
+enum hari_enum {
+  Senin
+  Selasa
+  Rabu
+  Kamis
+  Jumat
+  Sabtu
+  Minggu
+}
+
+enum status_doctor {
+  Aktif
+  Nonaktif
+  Cuti
+  Suspend
+}
+
+enum status_rs {
+  Aktif
+  Nonaktif
+  Suspend
+}
+
+enum tipe_enum {
+  A
+  B
+  C
+  D
+}
