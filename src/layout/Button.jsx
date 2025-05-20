@@ -10,7 +10,10 @@ const Button = ({
 }) => {
   const variantClasses = {
     brown :"bg-brown text-white border-2 border-brown",
-    oren :" bg-white text-orange-600 border-2 border-orange-600 "
+    oren :" bg-white text-orange-600 border-2 border-orange-600 ",
+    blue :"bg-blue-500 text-white border-2 border-blue-600"
+
+
 
   };
 

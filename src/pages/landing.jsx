@@ -7,15 +7,17 @@ import Button from "../layout/Button";
 function Landing() {
   return (
     <>
-    <div className="mx-auto max-w-[100rem] ">\
+    <div className="mx-auto max-w-[100rem] bg-blue-200/20 ">\
         <Navs/>
     </div>
      
-      <section className=" mx-auto max-w-[100rem] bg-blue-200/20">
-        <div className="columns-2 max-w[100rem]">
+      <section className=" mx-auto max-w-[100rem] bg-blue-200/20 ">
+        <div className="columns-2 max-w[100rem] pt-15 pb-20">
             <div className=" p-20  justify-center text-left align-center">
                 <p className="font-bold text-8xl text-blue-500">Antri Ga Pake Lama Sehat Lebih Cepat </p>
-                <p className="mt-15 text-xl text-blue-500">Cek estimasi antrian secara real-time, daftar konsultasi dari rumah, dan dapatkan rekomendasi tempat menarik di sekitar rumah sakit—semua dalam satu aplikasi.  <span className="font-bold text-blue-400">Lebih praktis, lebih cepat, dan lebih sehat.</span></p>
+                <p className="mt-15 text-xl text-blue-500">Cek estimasi antrian secara real-time, daftar konsultasi dari rumah, dan dapatkan rekomendasi tempat menarik di sekitar rumah sakit—semua dalam satu aplikasi. <span className="font-bold text-blue-400">Lebih praktis, lebih cepat, dan lebih sehat.</span> </p>
+                <Button label={"Join"} variant="blue"/>
+
             </div>
             <div className="">
                 <img src={Dokter} alt="" className="ml-15" />
@@ -52,7 +54,6 @@ function Landing() {
 
         </div>
        </section>
-
     </>
   );
 }
