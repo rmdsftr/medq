@@ -5,3 +5,9 @@ export class CreateProvinsiDto{
     @IsString()
     nama_prov: string;
 }
+
+export class UpdateProvinsiDto{
+    @IsNotEmpty()
+    @IsString()
+    nama_prov: string;
+}

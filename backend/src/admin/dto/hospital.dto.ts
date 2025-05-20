@@ -1,5 +1,6 @@
 import { IsEnum, IsLatitude, IsLongitude, IsNotEmpty, IsNumber, IsString, MaxLength, MinLength } from "class-validator";
 import { $Enums } from "../../../prisma/generated/prisma";
+import { Transform } from "class-transformer";
 
 export class CreateHospitalDto{
     @IsNotEmpty()
@@ -33,10 +34,12 @@ export class CreateHospitalDto{
     kode_pos: string;
 
     @IsNotEmpty()
+    @Transform(({value}) => Number(value))
     @IsNumber()
     id_kota: number;
 
     @IsNotEmpty()
+    @Transform(({value}) => Number(value))
     @IsNumber()
     id_prov: number;
 
@@ -47,4 +50,10 @@ export class CreateHospitalDto{
     @IsNotEmpty()
     @IsLongitude()
     longitude: number;
+}
+
+export class EditStatusRSDto{
+    @IsNotEmpty()
+    @IsEnum($Enums.status_rs, {message:'aktif, nonaktif, suspend'})
+    status: $Enums.status_rs;
 }
