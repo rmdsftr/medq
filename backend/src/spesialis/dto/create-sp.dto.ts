@@ -5,9 +5,3 @@ export class CreateSpDto{
     @IsString()
     spesialis: string;
 }
-
-export class EditSpDto{
-    @IsNotEmpty()
-    @IsString()
-    spesialis: string;
-}

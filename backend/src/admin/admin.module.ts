@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
-import { HospitalController, KotaController, ProvinsiController, SpesialisController } from "./admin.controller";
-import { HospitalService, KotaService, ProvinsiService, SpesialisService } from "./admin.service";
+import { AdminController } from "./admin.controller";
+import { AdminService } from "./admin.service";
 import { PrismaModule } from "../prisma/prisma.module";
 
 @Module({
-    controllers: [HospitalController, SpesialisController, ProvinsiController, KotaController],
-    providers: [HospitalService, SpesialisService, ProvinsiService, KotaService],
+    controllers: [AdminController],
+    providers: [AdminService],
     imports: [PrismaModule]
 })
 

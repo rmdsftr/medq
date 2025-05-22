@@ -2,7 +2,7 @@ import { IsEnum, IsLatitude, IsLongitude, IsNotEmpty, IsNumber, IsString, MaxLen
 import { $Enums } from "../../../prisma/generated/prisma";
 import { Transform } from "class-transformer";
 
-export class CreateHospitalDto{
+export class CreateAdminDto{
     @IsNotEmpty()
     @IsString()
     id_rs: string;
@@ -50,10 +50,4 @@ export class CreateHospitalDto{
     @IsNotEmpty()
     @IsLongitude()
     longitude: number;
-}
-
-export class EditStatusRSDto{
-    @IsNotEmpty()
-    @IsEnum($Enums.status_rs, {message:'aktif, nonaktif, suspend'})
-    status: $Enums.status_rs;
 }

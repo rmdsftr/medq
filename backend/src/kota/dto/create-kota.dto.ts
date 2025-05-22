@@ -9,13 +9,3 @@ export class CreateKotaDto{
     @IsNumber()
     id_prov: number;
 }
-
-export class EditKotaDto{
-    @IsNotEmpty()    
-    @IsString()
-    nama_kota: string;
-
-    @IsNotEmpty()
-    @IsNumber()
-    id_prov: number;
-}
