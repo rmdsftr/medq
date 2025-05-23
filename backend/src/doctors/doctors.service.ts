@@ -1,7 +1,6 @@
 import { BadRequestException, ConflictException, Injectable, InternalServerErrorException } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { AddSPDoctor, CreateDoctorDto, updateDoctorDto } from "./dto/create-doctor.dto";
-import * as bcrypt from 'bcrypt';
 import { toTitleCase } from "../utils/title.utils";
 
 @Injectable()
@@ -16,24 +15,16 @@ export class DoctorService{
                         lisensi: data.lisensi}
                 })
 
-                const checkemail = await tx.doctors.findUnique({
-                    where: {email: data.email}
-                })
-
-                if(checkemail || idDoc){
-                    throw new BadRequestException("Email sudah digunakan atau dokter sudah dibuat")
+                if(idDoc){
+                    throw new BadRequestException("dokter sudah didaftarkan")
                 }
             })
-
-            const hashedpassword = await bcrypt.hash(data.sandi_dokter, 10)
 
             const newDoc = await this.prisma.$transaction(async(tx) => {
                 await tx.doctors.create({
                     data: {
                         lisensi: data.lisensi,
                         nama_dokter: toTitleCase(data.nama_dokter),
-                        email: data.email,
-                        sandi_dokter: hashedpassword,
                         gender: data.gender,
                         tgl_lahir: new Date(data.tgl_lahir),
                         status: data.status,

@@ -4459,8 +4459,6 @@ export namespace Prisma {
   export type DoctorsMinAggregateOutputType = {
     lisensi: string | null
     nama_dokter: string | null
-    email: string | null
-    sandi_dokter: string | null
     gender: $Enums.gender_enum | null
     tgl_lahir: Date | null
     status: $Enums.status_doctor | null
@@ -4472,8 +4470,6 @@ export namespace Prisma {
   export type DoctorsMaxAggregateOutputType = {
     lisensi: string | null
     nama_dokter: string | null
-    email: string | null
-    sandi_dokter: string | null
     gender: $Enums.gender_enum | null
     tgl_lahir: Date | null
     status: $Enums.status_doctor | null
@@ -4485,8 +4481,6 @@ export namespace Prisma {
   export type DoctorsCountAggregateOutputType = {
     lisensi: number
     nama_dokter: number
-    email: number
-    sandi_dokter: number
     gender: number
     tgl_lahir: number
     status: number
@@ -4500,8 +4494,6 @@ export namespace Prisma {
   export type DoctorsMinAggregateInputType = {
     lisensi?: true
     nama_dokter?: true
-    email?: true
-    sandi_dokter?: true
     gender?: true
     tgl_lahir?: true
     status?: true
@@ -4513,8 +4505,6 @@ export namespace Prisma {
   export type DoctorsMaxAggregateInputType = {
     lisensi?: true
     nama_dokter?: true
-    email?: true
-    sandi_dokter?: true
     gender?: true
     tgl_lahir?: true
     status?: true
@@ -4526,8 +4516,6 @@ export namespace Prisma {
   export type DoctorsCountAggregateInputType = {
     lisensi?: true
     nama_dokter?: true
-    email?: true
-    sandi_dokter?: true
     gender?: true
     tgl_lahir?: true
     status?: true
@@ -4612,8 +4600,6 @@ export namespace Prisma {
   export type DoctorsGroupByOutputType = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date
     status: $Enums.status_doctor
@@ -4642,8 +4628,6 @@ export namespace Prisma {
   export type doctorsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     lisensi?: boolean
     nama_dokter?: boolean
-    email?: boolean
-    sandi_dokter?: boolean
     gender?: boolean
     tgl_lahir?: boolean
     status?: boolean
@@ -4658,8 +4642,6 @@ export namespace Prisma {
   export type doctorsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     lisensi?: boolean
     nama_dokter?: boolean
-    email?: boolean
-    sandi_dokter?: boolean
     gender?: boolean
     tgl_lahir?: boolean
     status?: boolean
@@ -4671,8 +4653,6 @@ export namespace Prisma {
   export type doctorsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     lisensi?: boolean
     nama_dokter?: boolean
-    email?: boolean
-    sandi_dokter?: boolean
     gender?: boolean
     tgl_lahir?: boolean
     status?: boolean
@@ -4684,8 +4664,6 @@ export namespace Prisma {
   export type doctorsSelectScalar = {
     lisensi?: boolean
     nama_dokter?: boolean
-    email?: boolean
-    sandi_dokter?: boolean
     gender?: boolean
     tgl_lahir?: boolean
     status?: boolean
@@ -4694,7 +4672,7 @@ export namespace Prisma {
     update_at?: boolean
   }
 
-  export type doctorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"lisensi" | "nama_dokter" | "email" | "sandi_dokter" | "gender" | "tgl_lahir" | "status" | "foto" | "create_at" | "update_at", ExtArgs["result"]["doctors"]>
+  export type doctorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"lisensi" | "nama_dokter" | "gender" | "tgl_lahir" | "status" | "foto" | "create_at" | "update_at", ExtArgs["result"]["doctors"]>
   export type doctorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     detail_sp?: boolean | doctors$detail_spArgs<ExtArgs>
     practices?: boolean | doctors$practicesArgs<ExtArgs>
@@ -4712,8 +4690,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       lisensi: string
       nama_dokter: string
-      email: string
-      sandi_dokter: string
       gender: $Enums.gender_enum
       tgl_lahir: Date
       status: $Enums.status_doctor
@@ -5147,8 +5123,6 @@ export namespace Prisma {
   interface doctorsFieldRefs {
     readonly lisensi: FieldRef<"doctors", 'String'>
     readonly nama_dokter: FieldRef<"doctors", 'String'>
-    readonly email: FieldRef<"doctors", 'String'>
-    readonly sandi_dokter: FieldRef<"doctors", 'String'>
     readonly gender: FieldRef<"doctors", 'gender_enum'>
     readonly tgl_lahir: FieldRef<"doctors", 'DateTime'>
     readonly status: FieldRef<"doctors", 'status_doctor'>
@@ -15846,8 +15820,6 @@ export namespace Prisma {
   export const DoctorsScalarFieldEnum: {
     lisensi: 'lisensi',
     nama_dokter: 'nama_dokter',
-    email: 'email',
-    sandi_dokter: 'sandi_dokter',
     gender: 'gender',
     tgl_lahir: 'tgl_lahir',
     status: 'status',
@@ -16298,8 +16270,6 @@ export namespace Prisma {
     NOT?: doctorsWhereInput | doctorsWhereInput[]
     lisensi?: StringFilter<"doctors"> | string
     nama_dokter?: StringFilter<"doctors"> | string
-    email?: StringFilter<"doctors"> | string
-    sandi_dokter?: StringFilter<"doctors"> | string
     gender?: Enumgender_enumFilter<"doctors"> | $Enums.gender_enum
     tgl_lahir?: DateTimeFilter<"doctors"> | Date | string
     status?: Enumstatus_doctorFilter<"doctors"> | $Enums.status_doctor
@@ -16313,8 +16283,6 @@ export namespace Prisma {
   export type doctorsOrderByWithRelationInput = {
     lisensi?: SortOrder
     nama_dokter?: SortOrder
-    email?: SortOrder
-    sandi_dokter?: SortOrder
     gender?: SortOrder
     tgl_lahir?: SortOrder
     status?: SortOrder
@@ -16327,12 +16295,10 @@ export namespace Prisma {
 
   export type doctorsWhereUniqueInput = Prisma.AtLeast<{
     lisensi?: string
-    email?: string
     AND?: doctorsWhereInput | doctorsWhereInput[]
     OR?: doctorsWhereInput[]
     NOT?: doctorsWhereInput | doctorsWhereInput[]
     nama_dokter?: StringFilter<"doctors"> | string
-    sandi_dokter?: StringFilter<"doctors"> | string
     gender?: Enumgender_enumFilter<"doctors"> | $Enums.gender_enum
     tgl_lahir?: DateTimeFilter<"doctors"> | Date | string
     status?: Enumstatus_doctorFilter<"doctors"> | $Enums.status_doctor
@@ -16341,13 +16307,11 @@ export namespace Prisma {
     update_at?: DateTimeNullableFilter<"doctors"> | Date | string | null
     detail_sp?: Detail_spListRelationFilter
     practices?: PracticesListRelationFilter
-  }, "lisensi" | "email">
+  }, "lisensi">
 
   export type doctorsOrderByWithAggregationInput = {
     lisensi?: SortOrder
     nama_dokter?: SortOrder
-    email?: SortOrder
-    sandi_dokter?: SortOrder
     gender?: SortOrder
     tgl_lahir?: SortOrder
     status?: SortOrder
@@ -16365,8 +16329,6 @@ export namespace Prisma {
     NOT?: doctorsScalarWhereWithAggregatesInput | doctorsScalarWhereWithAggregatesInput[]
     lisensi?: StringWithAggregatesFilter<"doctors"> | string
     nama_dokter?: StringWithAggregatesFilter<"doctors"> | string
-    email?: StringWithAggregatesFilter<"doctors"> | string
-    sandi_dokter?: StringWithAggregatesFilter<"doctors"> | string
     gender?: Enumgender_enumWithAggregatesFilter<"doctors"> | $Enums.gender_enum
     tgl_lahir?: DateTimeWithAggregatesFilter<"doctors"> | Date | string
     status?: Enumstatus_doctorWithAggregatesFilter<"doctors"> | $Enums.status_doctor
@@ -17123,8 +17085,6 @@ export namespace Prisma {
   export type doctorsCreateInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -17138,8 +17098,6 @@ export namespace Prisma {
   export type doctorsUncheckedCreateInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -17153,8 +17111,6 @@ export namespace Prisma {
   export type doctorsUpdateInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -17168,8 +17124,6 @@ export namespace Prisma {
   export type doctorsUncheckedUpdateInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -17183,8 +17137,6 @@ export namespace Prisma {
   export type doctorsCreateManyInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -17196,8 +17148,6 @@ export namespace Prisma {
   export type doctorsUpdateManyMutationInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -17209,8 +17159,6 @@ export namespace Prisma {
   export type doctorsUncheckedUpdateManyInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -18174,8 +18122,6 @@ export namespace Prisma {
   export type doctorsCountOrderByAggregateInput = {
     lisensi?: SortOrder
     nama_dokter?: SortOrder
-    email?: SortOrder
-    sandi_dokter?: SortOrder
     gender?: SortOrder
     tgl_lahir?: SortOrder
     status?: SortOrder
@@ -18187,8 +18133,6 @@ export namespace Prisma {
   export type doctorsMaxOrderByAggregateInput = {
     lisensi?: SortOrder
     nama_dokter?: SortOrder
-    email?: SortOrder
-    sandi_dokter?: SortOrder
     gender?: SortOrder
     tgl_lahir?: SortOrder
     status?: SortOrder
@@ -18200,8 +18144,6 @@ export namespace Prisma {
   export type doctorsMinOrderByAggregateInput = {
     lisensi?: SortOrder
     nama_dokter?: SortOrder
-    email?: SortOrder
-    sandi_dokter?: SortOrder
     gender?: SortOrder
     tgl_lahir?: SortOrder
     status?: SortOrder
@@ -19975,8 +19917,6 @@ export namespace Prisma {
   export type doctorsCreateWithoutDetail_spInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -19989,8 +19929,6 @@ export namespace Prisma {
   export type doctorsUncheckedCreateWithoutDetail_spInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -20046,8 +19984,6 @@ export namespace Prisma {
   export type doctorsUpdateWithoutDetail_spInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -20060,8 +19996,6 @@ export namespace Prisma {
   export type doctorsUncheckedUpdateWithoutDetail_spInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -20372,8 +20306,6 @@ export namespace Prisma {
   export type doctorsCreateWithoutPracticesInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -20386,8 +20318,6 @@ export namespace Prisma {
   export type doctorsUncheckedCreateWithoutPracticesInput = {
     lisensi: string
     nama_dokter: string
-    email: string
-    sandi_dokter: string
     gender: $Enums.gender_enum
     tgl_lahir: Date | string
     status: $Enums.status_doctor
@@ -20549,8 +20479,6 @@ export namespace Prisma {
   export type doctorsUpdateWithoutPracticesInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor
@@ -20563,8 +20491,6 @@ export namespace Prisma {
   export type doctorsUncheckedUpdateWithoutPracticesInput = {
     lisensi?: StringFieldUpdateOperationsInput | string
     nama_dokter?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    sandi_dokter?: StringFieldUpdateOperationsInput | string
     gender?: Enumgender_enumFieldUpdateOperationsInput | $Enums.gender_enum
     tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: Enumstatus_doctorFieldUpdateOperationsInput | $Enums.status_doctor

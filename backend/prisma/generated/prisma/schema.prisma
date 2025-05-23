@@ -35,18 +35,16 @@ model detail_sp {
 }
 
 model doctors {
-  lisensi      String        @id @db.VarChar(100)
-  nama_dokter  String        @db.VarChar(255)
-  email        String        @unique @db.VarChar(255)
-  sandi_dokter String        @db.VarChar(255)
-  gender       gender_enum
-  tgl_lahir    DateTime      @db.Date
-  status       status_doctor
-  foto         Bytes?
-  create_at    DateTime?     @default(now()) @db.Timestamp(6)
-  update_at    DateTime?     @default(now()) @db.Timestamp(6)
-  detail_sp    detail_sp[]
-  practices    practices[]
+  lisensi     String        @id @db.VarChar(100)
+  nama_dokter String        @db.VarChar(255)
+  gender      gender_enum
+  tgl_lahir   DateTime      @db.Date
+  status      status_doctor
+  foto        Bytes?
+  create_at   DateTime?     @default(now()) @db.Timestamp(6)
+  update_at   DateTime?     @default(now()) @db.Timestamp(6)
+  detail_sp   detail_sp[]
+  practices   practices[]
 }
 
 model hospitals {

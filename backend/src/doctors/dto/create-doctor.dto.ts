@@ -11,16 +11,6 @@ export class CreateDoctorDto{
     nama_dokter: string;
 
     @IsNotEmpty()
-    @IsEmail()
-    email: string;
-
-    @IsNotEmpty()
-    @IsString()
-    @MaxLength(12)
-    @MinLength(8)
-    sandi_dokter:string;
-
-    @IsNotEmpty()
     @IsEnum($Enums.gender_enum,  {message: 'Gender hanya Laki-laki atau Perempuan'})
     gender: $Enums.gender_enum;
 
