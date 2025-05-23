@@ -10,7 +10,7 @@ export class HospitalService{
             const skip = (page -1) * limit;
 
             const rs = await this.prisma.$queryRaw`
-                SELECT *, (
+                SELECT nama_rs, foto, (
                     6371 * acos(
                     cos(radians(${lat}))
                     * cos(radians(latitude))
