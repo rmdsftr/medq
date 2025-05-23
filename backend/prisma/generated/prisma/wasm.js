@@ -141,8 +141,6 @@ exports.Prisma.Detail_spScalarFieldEnum = {
 exports.Prisma.DoctorsScalarFieldEnum = {
   lisensi: 'lisensi',
   nama_dokter: 'nama_dokter',
-  email: 'email',
-  sandi_dokter: 'sandi_dokter',
   gender: 'gender',
   tgl_lahir: 'tgl_lahir',
   status: 'status',
@@ -157,6 +155,7 @@ exports.Prisma.HospitalsScalarFieldEnum = {
   nama_rs: 'nama_rs',
   tipe: 'tipe',
   status: 'status',
+  deskripsi: 'deskripsi',
   foto: 'foto',
   alamat: 'alamat',
   kode_pos: 'kode_pos',

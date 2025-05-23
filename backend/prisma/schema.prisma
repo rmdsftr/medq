@@ -37,8 +37,6 @@ model detail_sp {
 model doctors {
   lisensi      String        @id @db.VarChar(100)
   nama_dokter  String        @db.VarChar(255)
-  email        String        @unique @db.VarChar(255)
-  sandi_dokter String        @db.VarChar(255)
   gender       gender_enum
   tgl_lahir    DateTime      @db.Date
   status       status_doctor
@@ -55,6 +53,7 @@ model hospitals {
   nama_rs     String      @db.VarChar(255)
   tipe        tipe_enum
   status      status_rs
+  deskripsi   String?      @db.Text
   foto        Bytes?
   alamat      String      @db.VarChar(255)
   kode_pos    String      @db.VarChar(25)
