@@ -9,9 +9,13 @@ import { ProvinsiModule } from './provinsi/provinsi.module';
 import { KotaModule } from './kota/kota.module';
 import { JadwalModule } from './jadwal/jadwal.module';
 import { PraktikModule } from './praktik/praktik.module';
+import { HospitalModule } from './hospitals/hospitals.module';
+import { DokterModule } from './dokter/dokter.module';
 
 @Module({
-  imports: [UserModule, AdminModule, DoctorModule, SpesialisModule, ProvinsiModule, KotaModule, JadwalModule, PraktikModule],
+  imports: [UserModule, AdminModule, DoctorModule, 
+    SpesialisModule, ProvinsiModule, KotaModule, 
+    JadwalModule, PraktikModule, HospitalModule, DokterModule],
   controllers: [AppController],
   providers: [AppService],
 })

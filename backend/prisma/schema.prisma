@@ -55,6 +55,7 @@ model hospitals {
   nama_rs     String      @db.VarChar(255)
   tipe        tipe_enum
   status      status_rs
+  deskripsi   String?      @db.Text
   foto        Bytes?
   alamat      String      @db.VarChar(255)
   kode_pos    String      @db.VarChar(25)

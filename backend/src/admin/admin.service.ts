@@ -34,7 +34,8 @@ export class AdminService{
                     id_prov: data.id_prov,
                     foto: file?.buffer || null,
                     latitude: data.latitude,
-                    longitude: data.longitude
+                    longitude: data.longitude,
+                    deskripsi: data.deskripsi
                 }
             })
             return {

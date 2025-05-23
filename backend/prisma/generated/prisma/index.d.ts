@@ -5641,6 +5641,7 @@ export namespace Prisma {
     nama_rs: string | null
     tipe: $Enums.tipe_enum | null
     status: $Enums.status_rs | null
+    deskripsi: string | null
     foto: Uint8Array | null
     alamat: string | null
     kode_pos: string | null
@@ -5658,6 +5659,7 @@ export namespace Prisma {
     nama_rs: string | null
     tipe: $Enums.tipe_enum | null
     status: $Enums.status_rs | null
+    deskripsi: string | null
     foto: Uint8Array | null
     alamat: string | null
     kode_pos: string | null
@@ -5675,6 +5677,7 @@ export namespace Prisma {
     nama_rs: number
     tipe: number
     status: number
+    deskripsi: number
     foto: number
     alamat: number
     kode_pos: number
@@ -5708,6 +5711,7 @@ export namespace Prisma {
     nama_rs?: true
     tipe?: true
     status?: true
+    deskripsi?: true
     foto?: true
     alamat?: true
     kode_pos?: true
@@ -5725,6 +5729,7 @@ export namespace Prisma {
     nama_rs?: true
     tipe?: true
     status?: true
+    deskripsi?: true
     foto?: true
     alamat?: true
     kode_pos?: true
@@ -5742,6 +5747,7 @@ export namespace Prisma {
     nama_rs?: true
     tipe?: true
     status?: true
+    deskripsi?: true
     foto?: true
     alamat?: true
     kode_pos?: true
@@ -5846,6 +5852,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi: string | null
     foto: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -5882,6 +5889,7 @@ export namespace Prisma {
     nama_rs?: boolean
     tipe?: boolean
     status?: boolean
+    deskripsi?: boolean
     foto?: boolean
     alamat?: boolean
     kode_pos?: boolean
@@ -5903,6 +5911,7 @@ export namespace Prisma {
     nama_rs?: boolean
     tipe?: boolean
     status?: boolean
+    deskripsi?: boolean
     foto?: boolean
     alamat?: boolean
     kode_pos?: boolean
@@ -5922,6 +5931,7 @@ export namespace Prisma {
     nama_rs?: boolean
     tipe?: boolean
     status?: boolean
+    deskripsi?: boolean
     foto?: boolean
     alamat?: boolean
     kode_pos?: boolean
@@ -5941,6 +5951,7 @@ export namespace Prisma {
     nama_rs?: boolean
     tipe?: boolean
     status?: boolean
+    deskripsi?: boolean
     foto?: boolean
     alamat?: boolean
     kode_pos?: boolean
@@ -5952,7 +5963,7 @@ export namespace Prisma {
     id_prov?: boolean
   }
 
-  export type hospitalsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id_rs" | "sandi_admin" | "nama_rs" | "tipe" | "status" | "foto" | "alamat" | "kode_pos" | "latitude" | "longitude" | "create_at" | "update_at" | "id_kota" | "id_prov", ExtArgs["result"]["hospitals"]>
+  export type hospitalsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id_rs" | "sandi_admin" | "nama_rs" | "tipe" | "status" | "deskripsi" | "foto" | "alamat" | "kode_pos" | "latitude" | "longitude" | "create_at" | "update_at" | "id_kota" | "id_prov", ExtArgs["result"]["hospitals"]>
   export type hospitalsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     cities?: boolean | hospitals$citiesArgs<ExtArgs>
     provinces?: boolean | hospitals$provincesArgs<ExtArgs>
@@ -5981,6 +5992,7 @@ export namespace Prisma {
       nama_rs: string
       tipe: $Enums.tipe_enum
       status: $Enums.status_rs
+      deskripsi: string | null
       foto: Uint8Array | null
       alamat: string
       kode_pos: string
@@ -6421,6 +6433,7 @@ export namespace Prisma {
     readonly nama_rs: FieldRef<"hospitals", 'String'>
     readonly tipe: FieldRef<"hospitals", 'tipe_enum'>
     readonly status: FieldRef<"hospitals", 'status_rs'>
+    readonly deskripsi: FieldRef<"hospitals", 'String'>
     readonly foto: FieldRef<"hospitals", 'Bytes'>
     readonly alamat: FieldRef<"hospitals", 'String'>
     readonly kode_pos: FieldRef<"hospitals", 'String'>
@@ -15852,6 +15865,7 @@ export namespace Prisma {
     nama_rs: 'nama_rs',
     tipe: 'tipe',
     status: 'status',
+    deskripsi: 'deskripsi',
     foto: 'foto',
     alamat: 'alamat',
     kode_pos: 'kode_pos',
@@ -16370,6 +16384,7 @@ export namespace Prisma {
     nama_rs?: StringFilter<"hospitals"> | string
     tipe?: Enumtipe_enumFilter<"hospitals"> | $Enums.tipe_enum
     status?: Enumstatus_rsFilter<"hospitals"> | $Enums.status_rs
+    deskripsi?: StringNullableFilter<"hospitals"> | string | null
     foto?: BytesNullableFilter<"hospitals"> | Uint8Array | null
     alamat?: StringFilter<"hospitals"> | string
     kode_pos?: StringFilter<"hospitals"> | string
@@ -16390,6 +16405,7 @@ export namespace Prisma {
     nama_rs?: SortOrder
     tipe?: SortOrder
     status?: SortOrder
+    deskripsi?: SortOrderInput | SortOrder
     foto?: SortOrderInput | SortOrder
     alamat?: SortOrder
     kode_pos?: SortOrder
@@ -16413,6 +16429,7 @@ export namespace Prisma {
     nama_rs?: StringFilter<"hospitals"> | string
     tipe?: Enumtipe_enumFilter<"hospitals"> | $Enums.tipe_enum
     status?: Enumstatus_rsFilter<"hospitals"> | $Enums.status_rs
+    deskripsi?: StringNullableFilter<"hospitals"> | string | null
     foto?: BytesNullableFilter<"hospitals"> | Uint8Array | null
     alamat?: StringFilter<"hospitals"> | string
     kode_pos?: StringFilter<"hospitals"> | string
@@ -16433,6 +16450,7 @@ export namespace Prisma {
     nama_rs?: SortOrder
     tipe?: SortOrder
     status?: SortOrder
+    deskripsi?: SortOrderInput | SortOrder
     foto?: SortOrderInput | SortOrder
     alamat?: SortOrder
     kode_pos?: SortOrder
@@ -16458,6 +16476,7 @@ export namespace Prisma {
     nama_rs?: StringWithAggregatesFilter<"hospitals"> | string
     tipe?: Enumtipe_enumWithAggregatesFilter<"hospitals"> | $Enums.tipe_enum
     status?: Enumstatus_rsWithAggregatesFilter<"hospitals"> | $Enums.status_rs
+    deskripsi?: StringNullableWithAggregatesFilter<"hospitals"> | string | null
     foto?: BytesNullableWithAggregatesFilter<"hospitals"> | Uint8Array | null
     alamat?: StringWithAggregatesFilter<"hospitals"> | string
     kode_pos?: StringWithAggregatesFilter<"hospitals"> | string
@@ -17206,6 +17225,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -17224,6 +17244,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -17242,6 +17263,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -17260,6 +17282,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -17278,6 +17301,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -17295,6 +17319,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -17310,6 +17335,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -18269,6 +18295,7 @@ export namespace Prisma {
     nama_rs?: SortOrder
     tipe?: SortOrder
     status?: SortOrder
+    deskripsi?: SortOrder
     foto?: SortOrder
     alamat?: SortOrder
     kode_pos?: SortOrder
@@ -18293,6 +18320,7 @@ export namespace Prisma {
     nama_rs?: SortOrder
     tipe?: SortOrder
     status?: SortOrder
+    deskripsi?: SortOrder
     foto?: SortOrder
     alamat?: SortOrder
     kode_pos?: SortOrder
@@ -18310,6 +18338,7 @@ export namespace Prisma {
     nama_rs?: SortOrder
     tipe?: SortOrder
     status?: SortOrder
+    deskripsi?: SortOrder
     foto?: SortOrder
     alamat?: SortOrder
     kode_pos?: SortOrder
@@ -20261,6 +20290,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -20278,6 +20308,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -20418,6 +20449,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -20435,6 +20467,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -20874,6 +20907,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -20891,6 +20925,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -20959,6 +20994,7 @@ export namespace Prisma {
     nama_rs?: StringFilter<"hospitals"> | string
     tipe?: Enumtipe_enumFilter<"hospitals"> | $Enums.tipe_enum
     status?: Enumstatus_rsFilter<"hospitals"> | $Enums.status_rs
+    deskripsi?: StringNullableFilter<"hospitals"> | string | null
     foto?: BytesNullableFilter<"hospitals"> | Uint8Array | null
     alamat?: StringFilter<"hospitals"> | string
     kode_pos?: StringFilter<"hospitals"> | string
@@ -20997,6 +21033,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -21014,6 +21051,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -21368,6 +21406,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -21384,6 +21423,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -21401,6 +21441,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -21418,6 +21459,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -21439,6 +21481,7 @@ export namespace Prisma {
     nama_rs: string
     tipe: $Enums.tipe_enum
     status: $Enums.status_rs
+    deskripsi?: string | null
     foto?: Uint8Array | null
     alamat: string
     kode_pos: string
@@ -21471,6 +21514,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -21488,6 +21532,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string
@@ -21505,6 +21550,7 @@ export namespace Prisma {
     nama_rs?: StringFieldUpdateOperationsInput | string
     tipe?: Enumtipe_enumFieldUpdateOperationsInput | $Enums.tipe_enum
     status?: Enumstatus_rsFieldUpdateOperationsInput | $Enums.status_rs
+    deskripsi?: NullableStringFieldUpdateOperationsInput | string | null
     foto?: NullableBytesFieldUpdateOperationsInput | Uint8Array | null
     alamat?: StringFieldUpdateOperationsInput | string
     kode_pos?: StringFieldUpdateOperationsInput | string

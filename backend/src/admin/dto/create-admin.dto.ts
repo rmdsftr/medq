@@ -50,4 +50,7 @@ export class CreateAdminDto{
     @IsNotEmpty()
     @IsLongitude()
     longitude: number;
+
+    @IsString()
+    deskripsi: string;
 }

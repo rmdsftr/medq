@@ -157,6 +157,7 @@ exports.Prisma.HospitalsScalarFieldEnum = {
   nama_rs: 'nama_rs',
   tipe: 'tipe',
   status: 'status',
+  deskripsi: 'deskripsi',
   foto: 'foto',
   alamat: 'alamat',
   kode_pos: 'kode_pos',
