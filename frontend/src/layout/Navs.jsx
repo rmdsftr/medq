@@ -26,7 +26,7 @@ const Navs = () => {
               onClick={() => setActive(menu.name)}
               className={`border-b-2 text-md transition duration-200
                 ${active === menu.name
-                  ? 'border-gray-500 text-orange-700 font-bold'
+                  ? 'border-gray-500 text-blue-700 font-bold'
                   : 'border-transparent text-black hover:text-gray-500'}
               `}
             >

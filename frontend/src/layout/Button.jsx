@@ -9,16 +9,14 @@ const Button = ({
   ikon,
 }) => {
   const variantClasses = {
-    brown :"bg-brown text-white border-2 border-brown",
-    oren :" bg-white text-orange-600 border-2 border-orange-600 ",
-    blue :"bg-blue-500 text-white border-2 border-blue-600"
+  brown: "bg-brown text-white border-2 border-brown",
+  oren: "bg-white text-orange-600 border-2 border-orange-600",
+  biru: "bg-blue-500 text-white border-2 border-blue-500",
+};
 
-
-
-  };
 
   const baseClasses =
-    "flex items-center gap-2 px-5 py-2 rounded-lg font-bold border-2 transition";
+    "flex items-center gap-2 px-8 py-2 rounded-lg font-bold border-2 transition";
 
   return (
     <button

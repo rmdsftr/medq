@@ -1,34 +1,38 @@
-import Loginpict from "../assets/login.png"
+import Loginpict from "../assets/login.png";
+import Gradient from "../assets/gradient.png";
 import Input from "../layout/Input";
-import Gradient from "../assets/gradient.png"
+import Button from "../layout/Button";
 
-
-function Login (){
-    return(
-        <>
-         <div className="columns-2 justify-items-center">
-            <div className="">
-                <img src={Loginpict} alt="" />
-                {/* <img src={Gradient} alt="" /> */}
-
-            </div>
-            <div className="w-[55rem] ml-4 items-center">
-                <h1 className="text-lg font-bold">Login</h1>
-                <div className="mt-10 py-10">
-                    <Input label={"Email"} placeholder={"example : azizah@gmail.com"} />
-                    <Input label={"Password"} placeholder={"Masukkan password"} />
-                </div>
-              
-
-
-            </div>
-    
-
-
+function Login() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="flex w-[1000px] h-[600px] shadow-lg rounded-2xl overflow-hidden ml-60">
+        <div className="relative w-1/2 flex items-center justify-center bg-white">
+          <img
+            src={Gradient}
+            alt="background"
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          />
+          <img
+            src={Loginpict}
+            alt="login"
+            className="relative z-10 max-w-[80%]"
+          />
         </div>
-        </>
-       
-    )
+
+        <div className="w-1/2 flex flex-col justify-center px-10 bg-white">
+          <h1 className="text-4xl font-bold text-center text-blue-500 mb-8">Login</h1>
+          <div className="space-y-4">
+            <Input label="Email" placeholder="example: azizah@gmail.com" />
+            <Input label="Password" placeholder="Masukkan password" />
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Button label="Login" variant="biru" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
